@@ -1,0 +1,14 @@
+<ion-menu contentId="main-content">
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-button expand="full" [routerLink]="['/all-annonces']" > All Annonces</ion-button>
+  <ion-button expand="full" [routerLink]="['/annonce']"> My Annonces</ion-button>
+  <ion-button expand="full"  [routerLink]="['/add-annonce']" >Add New Annonce</ion-button>
+</ion-content>
+<ion-button expand="full" fill="clear" [routerLink]="['']" >Logout</ion-button>
+
+</ion-menu>

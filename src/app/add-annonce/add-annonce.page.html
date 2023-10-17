@@ -1,0 +1,38 @@
+<ion-app>
+  <app-menu></app-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title> Add Annonce</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+
+    <ion-content>
+      <div class="ion-padding"><h2>Add A New Annonce </h2></div>
+
+      <ion-item>
+        <ion-input [(ngModel)]="annonceTitle" label="Title:" placeholder="Annonce Title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="annoncePrice" label="Price:" placeholder="Price"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea [(ngModel)]="annonceDescription" label="Description:" placeholder="Annonce Description"></ion-textarea>
+      </ion-item>
+      <ion-list>
+        <ion-item>
+          <ion-label>Category:</ion-label>
+          <ion-select [(ngModel)]="selectedCategory" aria-label="Category" interface="popover" placeholder="Choose A Category">
+            <ion-select-option value="Cars">Cars</ion-select-option>
+            <ion-select-option value="Houses">Houses</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <ion-button (click)="addNewAnnonce()"  [routerLink]="['/annonce']">Add Annonce</ion-button>
+     </ion-content>
+  </div>
+</ion-app>
