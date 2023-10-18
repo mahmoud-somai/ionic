@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'one-annonce/:id',
     loadChildren: () => import('./one-annonce/one-annonce.module').then( m => m.OneAnnoncePageModule)
   },
+  {
+    path: 'update/:id',
+    loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule)
+  },
 
 ];
 

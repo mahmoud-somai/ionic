@@ -1,0 +1,50 @@
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-button expand="full" [routerLink]="['/all-annonces']" > All Annonces</ion-button>
+      <ion-button expand="full" [routerLink]="['/annonce']"> My Annonces</ion-button>
+      <ion-button expand="full"  [routerLink]="['/add-annonce']" >Add New Annonce</ion-button>
+    </ion-content>
+    <ion-button expand="full" fill="clear" [routerLink]="['']" >Logout</ion-button>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title> Update Annonce</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+
+    <ion-content>
+      <div class="ion-padding"><h2>Edit Annonce</h2></div>
+
+      <ion-item>
+        <ion-input [(ngModel)]="AnnonceData.title" label="Title:" placeholder="Annonce Title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="AnnonceData.price" label="Price:" placeholder="Price"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea [(ngModel)]="AnnonceData.description" label="Description:" placeholder="Annonce Description"></ion-textarea>
+      </ion-item>
+      <ion-list>
+        <ion-item>
+          <ion-label>Category:</ion-label>
+          <ion-select [(ngModel)]="AnnonceData.category" aria-label="Category" interface="popover" placeholder="Choose A Category">
+            <ion-select-option value="Cars">Cars</ion-select-option>
+            <ion-select-option value="Houses">Houses</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <ion-button (click)="updateAnnonce()"  expand="full" color="warning">Update Annonce</ion-button>
+    </ion-content>
+  </div>
+</ion-app>

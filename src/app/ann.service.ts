@@ -24,4 +24,17 @@ export class AnnService {
       `https://annonces-dfcc9-default-rtdb.europe-west1.firebasedatabase.app/Annonce/${id}.json`
     );
   }
+
+  updateAnnonce(nvalue:any, id:any) {
+    return this.http.patch(
+      `https://annonces-dfcc9-default-rtdb.europe-west1.firebasedatabase.app/Annonce/${id}.json`,
+      nvalue
+    );
+  }
+
+  deleteAnnonce(id:string) {
+    return this.http.delete(
+      `https://annonces-dfcc9-default-rtdb.europe-west1.firebasedatabase.app/Annonce/${id}.json`
+    );
+  }
 }

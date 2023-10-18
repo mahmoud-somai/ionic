@@ -50,6 +50,8 @@ export class HomePage {
   }
 
 
+
+
   ngOnInit() {
     this.getdata();
   }

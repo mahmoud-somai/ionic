@@ -29,7 +29,7 @@
     <ion-content>
 
 
-<ion-card *ngFor="let annonce of allannonces">
+<ion-card *ngFor="let annonce of allannonces" >
   <ion-row>
     <!-- Image on the right -->
     <ion-col size="4">
@@ -50,10 +50,15 @@
 
         <ion-row>
           <ion-col size="6">
-            <ion-button  expand="full" color="warning"><ion-icon slot="start" name="options-outline"></ion-icon>Update</ion-button>
+            <ion-button  [routerLink]="['/one-annonce', annonce.id]"  expand="full" color="primary"> <ion-icon slot="start" name="arrow-forward-circle-outline"></ion-icon>Show</ion-button>
           </ion-col>
+
           <ion-col size="6">
-            <ion-button  expand="full" color="danger"> <ion-icon slot="start" name="trash-outline"></ion-icon>Delete</ion-button>
+            <ion-button [routerLink]="['/update', annonce.id]"  expand="full" color="warning"><ion-icon slot="start" name="options-outline"></ion-icon>Update</ion-button>
+          </ion-col>
+
+          <ion-col size="6">
+            <ion-button (click)="presentDeleteConfirmation(annonce.id)"   expand="full" color="danger"> <ion-icon slot="start" name="trash-outline"></ion-icon>Delete</ion-button>
           </ion-col>
         </ion-row>
       </ion-card-content>
